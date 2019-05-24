@@ -1,15 +1,9 @@
 <?php
-$dir = $_SERVER["DOCUMENT_ROOT"]."/testdomen/classes";
-$obj = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir),RecursiveIteratorIterator::SELF_FIRST);
-foreach($obj as $name => $object){
-    if (is_file($name)){
-        include_once($name);
-    }
-}
+define('CLASS_DIR', '../classes');
+set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+spl_autoload_extensions('.php');
+spl_autoload_register();
+session_start();
 
 $con = new \classes\transport\Connect();
 $auth = new \classes\main\AuthUser();
-$method="authLogin";
-$params=json_encode((object)["login"=>"demo","password"=>"demo"]);
-
-var_dump($auth->getToken($params));

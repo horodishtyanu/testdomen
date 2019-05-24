@@ -3,7 +3,7 @@ namespace classes\main;
 
 use classes\transport\Connect;
 
-class AuthUser
+class AuthUser extends Connect
 {
     private $token;
 
@@ -12,8 +12,7 @@ class AuthUser
      */
     public function getToken($userData)
     {
-        $connect = new Connect();
-        $this->token = $connect->makeConnect("authLogin", $userData)->result->token;
+        $this->token = $this->makeConnect("authLogin", $userData)->result->token;
         return $this->token;
     }
 
