@@ -5,5 +5,5 @@ use classes\transport\Connect;
 
 class Domain
 {
-    
+
 }
