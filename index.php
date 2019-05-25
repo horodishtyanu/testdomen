@@ -1,6 +1,7 @@
 <?
-include ($_SERVER['DOCUMENT_ROOT']."/testdomen/resources/template/header.php");
 require "init/init.php";
+include ($_SERVER['DOCUMENT_ROOT']."resources/template/header.php");
+
 ?>
 	<body>
 		<div class="container">
@@ -38,5 +39,5 @@ require "init/init.php";
 	</body>
 </html>
 <?
-include ($_SERVER['DOCUMENT_ROOT']."/testdomen/resources/template/footer.php");
+include ($_SERVER['DOCUMENT_ROOT']."resources/template/footer.php");
 ?>

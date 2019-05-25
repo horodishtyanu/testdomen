@@ -12,8 +12,13 @@ class AuthUser extends Connect
      */
     public function getToken($userData)
     {
-        $this->token = $this->makeConnect("authLogin", $userData)->result->token;
-        return $this->token;
+        $request = $this->makeConnect("authLogin", $userData);
+        if (isset($request->error)){
+            return $request;
+        }else{
+            $_SESSION['userToken'] = $this->token = $request->result->token;
+            return $this->token;
+        }
     }
 
     /**
