@@ -2,7 +2,6 @@
 require "init/init.php";
 include ($_SERVER['DOCUMENT_ROOT']."resources/template/header.php");
 ?>
-    <body>
     <div class="container">
         <h1>Тестовое задание!</h1>
 

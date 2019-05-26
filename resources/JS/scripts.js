@@ -19,4 +19,17 @@ $(document).on('ready', function () {
             }
         }
     });
+}).on('submit', '#newDomain', function (event) {
+    event.preventDefault();
+    let data = {'event': $(this).attr('data-event')};
+    data['data'] = $(this).serialize();
+    console.log(data);
+    $.ajax({
+        type: "POST",
+        data: data,
+        success:function (mess) {
+            // let jData = JSON.parse(mess);
+            console.log(mess);
+        }
+    });
 })
